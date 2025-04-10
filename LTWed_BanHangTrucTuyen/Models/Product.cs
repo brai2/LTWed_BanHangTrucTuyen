@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LTWed_BanHangTrucTuyen.Models
 {
@@ -7,34 +8,30 @@ namespace LTWed_BanHangTrucTuyen.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        [MaxLength(200)]
+        [Required(ErrorMessage = "Tên sản phẩm là bắt buộc")]
+        [StringLength(100, ErrorMessage = "Tên không quá 100 ký tự")]
         public string Name { get; set; }
 
-        public string Description { get; set; }
-
-        [Required]
+        [Required(ErrorMessage = "Giá là bắt buộc")]
+        [Range(0, double.MaxValue, ErrorMessage = "Giá không hợp lệ")]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
 
-        // Giá khuyến mãi (nếu có)
-        public decimal? DiscountPrice { get; set; }
+        [StringLength(500, ErrorMessage = "Mô tả không quá 500 ký tự")]
+        public string Description { get; set; }
 
-        // Số lượng tồn kho
-        public int StockQuantity { get; set; }
-
-        // URL hình ảnh sản phẩm (có thể mở rộng thành danh sách nếu cần)
+        [Display(Name = "Ảnh sản phẩm")]
         public string ImageUrl { get; set; }
 
-        // Trạng thái sản phẩm: hiển thị hay ẩn, còn hàng hay hết hàng
-        public bool IsActive { get; set; }
-        public bool InStock { get; set; }
-
-        // Liên kết với danh mục
+        // Quan hệ với Category
+        [Display(Name = "Danh mục")]
         public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public Category Category { get; set; }
 
-        // Danh sách đánh giá của sản phẩm
-        public virtual ICollection<Review> Reviews { get; set; }
+        // Các trường mở rộng (tùy chọn)
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public bool IsActive { get; set; } = true;
+        public bool InStock { get; set; } = true;
     }
 }
 

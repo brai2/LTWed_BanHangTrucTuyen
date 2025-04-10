@@ -1,40 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LTWed_BanHangTrucTuyen.Models
 {
-    // Định nghĩa trạng thái đơn hàng
-    public enum OrderStatus
-    {
-        Processing,
-        Shipped,
-        Delivered,
-        Cancelled
-    }
-
     public class Order
     {
         public int Id { get; set; }
 
-        public DateTime OrderDate { get; set; }
+        [Required]
+        public string UserId { get; set; }  // Liên kết với User
 
-        // Liên kết với khách hàng (user)
-        public string CustomerId { get; set; }
-        public virtual ApplicationUser Customer { get; set; }
-
-        public OrderStatus Status { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime OrderDate { get; set; } = DateTime.Now;
 
         [Required]
-        public string ShippingAddress { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal TotalPrice { get; set; }
 
-        // Phương thức thanh toán: COD, chuyển khoản, ...
-        public string PaymentMethod { get; set; }
+        [Required]
+        [StringLength(20)]
+        public string Status { get; set; } = "Pending";  // Pending, Completed, Cancelled
 
-        public decimal TotalAmount { get; set; }
-
-        // Danh sách sản phẩm trong đơn hàng
-        public virtual ICollection<OrderItem> OrderItems { get; set; }
+        // Quan hệ 1-n với OrderDetail
+        public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
 

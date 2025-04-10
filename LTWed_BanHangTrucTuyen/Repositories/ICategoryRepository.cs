@@ -6,8 +6,7 @@ namespace LTWed_BanHangTrucTuyen.Repositories
 {
     public interface ICategoryRepository : IRepository<Category>
     {
-        // Ví dụ: lấy danh sách danh mục có sản phẩm hoạt động
-        Task<IEnumerable<Category>> GetCategoriesWithActiveProductsAsync();
+        Task<IEnumerable<Category>> GetCategoriesWithProductsAsync();
     }
 }
 

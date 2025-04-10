@@ -8467,11 +8467,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual code\\LTWed_BanHangTrucTuyen\\LTWed_BanHangTrucTuyen\\LTWed_BanHangTrucTuyen.csproj",
+      "projectUniqueName": "C:\\Users\\lemin\\LTWed_BanHangTrucTuyen\\LTWed_BanHangTrucTuyen\\LTWed_BanHangTrucTuyen.csproj",
       "projectName": "LTWed_BanHangTrucTuyen",
-      "projectPath": "D:\\Visual code\\LTWed_BanHangTrucTuyen\\LTWed_BanHangTrucTuyen\\LTWed_BanHangTrucTuyen.csproj",
+      "projectPath": "C:\\Users\\lemin\\LTWed_BanHangTrucTuyen\\LTWed_BanHangTrucTuyen\\LTWed_BanHangTrucTuyen.csproj",
       "packagesPath": "C:\\Users\\lemin\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual code\\LTWed_BanHangTrucTuyen\\LTWed_BanHangTrucTuyen\\obj\\",
+      "outputPath": "C:\\Users\\lemin\\LTWed_BanHangTrucTuyen\\LTWed_BanHangTrucTuyen\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

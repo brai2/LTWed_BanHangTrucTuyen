@@ -1,0 +1,55 @@
+﻿@model DashboardViewModel
+
+<div class="container">
+    <h2>Dashboard</h2>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng sản phẩm</h5>
+                    <p class="card-text">@Model.TotalProducts</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng người dùng</h5>
+                    <p class="card-text">@Model.TotalUsers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng đơn hàng</h5>
+                    <p class="card-text">@Model.TotalOrders</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mt-4">Đơn hàng gần đây</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Mã đơn</th>
+                <th>Người đặt</th>
+                <th>Ngày đặt</th>
+                <th>Tổng tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.RecentOrders)
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.User.FullName</td>
+                    <td>@order.OrderDate.ToString("dd/MM/yyyy")</td>
+                    <td>@order.TotalPrice.ToString("N0") đ</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

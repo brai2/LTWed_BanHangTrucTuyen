@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LTWed_BanHangTrucTuyen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc5c719085b14b92ef12a52a664b81a3e4426c13")]
 [assembly: System.Reflection.AssemblyProductAttribute("LTWed_BanHangTrucTuyen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LTWed_BanHangTrucTuyen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

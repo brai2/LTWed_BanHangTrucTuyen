@@ -5,10 +5,15 @@ namespace LTWed_BanHangTrucTuyen.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        [MaxLength(150)]
+        [Required]
+        [StringLength(100)]
         public string FullName { get; set; }
 
-        // Bạn có thể bổ sung thêm các thuộc tính khác như ngày sinh, ảnh đại diện, v.v.
+        [StringLength(200)]
+        public string Address { get; set; }
+
+        // Quan hệ 1-n với Order (tùy chọn)
+        public ICollection<Order> Orders { get; set; }
     }
 }
 

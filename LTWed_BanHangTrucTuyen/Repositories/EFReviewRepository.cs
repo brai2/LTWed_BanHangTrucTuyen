@@ -7,7 +7,7 @@ using LTWed_BanHangTrucTuyen.Models;
 
 namespace LTWed_BanHangTrucTuyen.Repositories
 {
-    public class EFReviewRepository : EFRepository<Review>, IReviewRepository
+    public class EFReviewRepository : Repository<Review>, IReviewRepository
     {
         public EFReviewRepository(ApplicationDbContext context) : base(context)
         {
